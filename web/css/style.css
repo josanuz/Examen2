@@ -77,13 +77,24 @@
     border-collapse: collapse;
     padding: 5px 5px;
 }
+.styledSelect option:nth-child(odd) {
+    background: #EEEEEE;
+}
 .styledSelect {
-   background-color: #FFF;
-   border: none;
+    background-color: white;
+    border: 1px solid;
+    width: 67px;
 }
 .btnupdt{
     background-color: white;
-    border: 1px solid gray;
+    border: 1px dashed gray;
+    width: 100%;
+}
+.btnupdt:hover{
+    background-color: gray;
+    border: 1px dashed black;
+    color: red;
+    width: 100%;
 }
 .rdonly{
     border: none;
