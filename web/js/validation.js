@@ -1,16 +1,14 @@
-var oldColor;
-var oldFontW;
 function newStudentForm(){
 
 var carnet = document.forms["newStudent"]["pCarnet"].value;
 var surName = document.forms["newStudent"]["pSurName"].value;
 var name = document.forms["newStudent"]["pName"].value;
 if (carnet===null || carnet==="")
-    alert("Falta Informacion de Carnet");
+    alert("Debe Indicar El Carnet");
 else if (surName===null || surName==="")
-    alert("Debe Llenar los Apellidos");
+    alert("Debe Indicar los Apellidos");
 else if (name===null || name==="")
-    alert("Debe Llenar El Nombre");
+    alert("Debe Indicar El Nombre");
 else document.forms["newStudent"].submit();
 };
 
