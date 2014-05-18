@@ -77,13 +77,13 @@
     border-collapse: collapse;
     padding: 5px 5px;
 }
-.styledSelect option:nth-child(odd) {
-    background: #EEEEEE;
-}
-.styledSelect {
+.styledSelect{
     background-color: white;
     border: 1px solid;
     width: 67px;
+}
+.styledSelect option:nth-child(odd){
+    background: #EEEEEE;
 }
 .btnupdt{
     background-color: white;
