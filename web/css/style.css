@@ -1,0 +1,86 @@
+@font-face
+{
+    font-family: Scratch;
+    src: url(slopness.ttf);
+}
+@font-face
+{
+    font-family: manifesto;
+    src: url(manifesto.ttf);
+}
+@font-face
+{
+    font-family: dk_cris;
+    src: url(dk_cris.ttf);
+}
+#body{
+    background-image: url("../img/bg1.png");
+}
+#wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+#formLayout img{
+    border-right: 1px solid;
+    height: 120px;
+    padding-right: 10px;
+    width: 120px;
+}
+.intext {
+   font-family: Scratch;
+   font-size: 17px;
+   height: 17px;
+   background: url("../img/dot.png") repeat-x scroll 0 11px / 7px 10px rgba(0, 0, 0, 0);
+   border: thin none;
+   padding-left: 5px; 
+}
+.alabel{
+    font-family: manifesto;
+    font-size: 22px;
+    padding-left: 10px;
+}
+.abutton{
+    padding-left: 10px;
+}
+.btn{
+    border:1px dashed;
+    background-color: white;
+    font-family: manifesto;    
+}
+.btn:hover{
+    background-color: #d4d4d2; 
+    font-weight: bold;
+    color: red;
+}
+#formLayout {
+    border: 1px solid;
+    padding: 2px;
+}
+#displayTable{
+    margin-top: 25px;
+    border : 1px solid;
+    border-collapse: collapse;
+}
+#displayTable td {
+    border : 1px dashed;
+    border-collapse: collapse;
+    padding: 5px 5px;
+}
+#displayTable tr{
+    border : 1px dashed;
+    border-collapse: collapse;
+    padding: 5px 5px;
+}
+#displayTable th{
+    font-family: dk_cris;
+    border : 1px dashed;
+    border-collapse: collapse;
+    padding: 5px 5px;
+}
+.btnupdt{
+    
+}
+.rdonly{
+    border: none;
+    background-color: transparent;
+}
