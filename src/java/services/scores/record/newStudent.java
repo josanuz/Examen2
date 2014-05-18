@@ -34,13 +34,10 @@ public class newStudent extends HttpServlet {
        String name = request.getParameter("pName");
        String id = request.getParameter("pCarnet");
        String surname = request.getParameter("pSurName");
-       studentRecord record = new studentRecord();
+       studentRecord record = new studentRecord();       
        
-       HttpSession session = request.getSession(); 
-
-       if(record.addStudent(name,surname,id))
-           session.setAttribute("Error", "0"); 
-       else session.setAttribute("Error", "1");
+       if(!record.addStudent(name,surname,id))
+         request.setAttribute("Error", "Ya Existe el ID");
        
        request.getRequestDispatcher("/register.jsp"). 
        forward(request, response); 
