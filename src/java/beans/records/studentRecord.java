@@ -30,6 +30,11 @@ public class studentRecord implements Serializable{
         if(record == null) record = new HashMap<String, student>();
     }
     
+    public boolean deleteStudent(String s){
+        if(!record.containsKey(s)) return false;
+        record.remove(s);
+        return true;
+    }
     public boolean addStudent(student s){
         if(record.containsKey(s.getId())) return false;
         record.put(s.getId(), s);
@@ -62,14 +67,12 @@ public class studentRecord implements Serializable{
         StringBuilder sb = new StringBuilder();
         if(studentRecord.record == null)
             return " ";
-        for (Map.Entry pairs : studentRecord.record.entrySet()) {
-            sb.append(getRow((String)pairs.getKey()));
-        }
-        //for (String key : keys) {
-          //  sb.append(getRow(key));
-        //}
-       return sb.toString();
-       //return "<td>NULL</td> <td>NULL</td> <td>NULL</td> <td>NULL</td> <td>NULL</td> <td>NULL</td> <td>NULL</td> <td>NULL</td> <td>NULL</td>";
+        SortedSet<String> keys = new TreeSet<String>(record.keySet());
+        for (String key : keys) { 
+            sb.append(getRow(key));
+   // do something
+}
+       return sb.toString(); 
     }
     private String getRow(String id){
         if(!exist(id)) return "<td>NULL</td> <td>NULL</td> <td>NULL</td> <td>NULL</td> <td>NULL</td> <td>NULL</td> <td>NULL</td> <td>NULL</td> <td>NULL</td>";
@@ -81,9 +84,9 @@ public class studentRecord implements Serializable{
         sb.append("<td>").append(sid).append("</td>\n");
         sb.append("<td>").append(s.getSurName()).append("</td>");
         sb.append("<td>").append(s.getName()).append("</td>");
-        sb.append("<td>").append( makeSelector(1, (int)s.getFirstTest(), sid) ).append("</td>\n");
-        sb.append("<td>").append( makeSelector(2, (int)s.getSecondTest(), sid) ).append("</td>\n");
-        sb.append("<td>").append( makeSelector(3, (int)s.getThirdTest(), sid) ).append("</td>\n");
+        sb.append("<td class=selecCell>").append( makeSelector(1, (int)s.getFirstTest(), sid) ).append("</td>\n");
+        sb.append("<td class=selecCell>").append( makeSelector(2, (int)s.getSecondTest(), sid) ).append("</td>\n");
+        sb.append("<td class=selecCell>").append( makeSelector(3, (int)s.getThirdTest(), sid) ).append("</td>\n");
         sb.append("<td>").append(s.getPromedio()).append("</td>\n");
         sb.append("<td>").append(makeButton(s.getId())).append("</td>\n");
         sb.append("<td>").append(makeDelButton(s.getId())).append("</td>\n");
@@ -94,7 +97,7 @@ public class studentRecord implements Serializable{
     private String makeSelector(int tstnum,int def,String sid){
         StringBuilder sb = new StringBuilder();
         sb.append("<select id=").append(tstnum).append(sid).append(" value=").append(def).append(" class=styledSelect >");
-        for(int i = 0; i <= 100 ; i+=5){
+        for(int i = 100; i >= 0 ; i-=5){
             if(i == def)sb.append("<option selected=selected > ").append(i).append(" </option>");
             else sb.append("<option> ").append(i).append(" </option>");
         }
