@@ -10,11 +10,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro de Examenes</title>
-        <script type="text/javascript" src="js/validation.js"></script>
+         <script type="text/javascript" src="js/jquery_2.js"></script>
+         <script type="text/javascript" src="js/jquery_ui.js"></script>
+        <script type="text/javascript" src="js/validation.js"></script>        
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <jsp:useBean id="record" class="beans.records.studentRecord" scope="session" > </jsp:useBean>
     </head>
-    <body>
+    <body onload="begin();">
+    <% String message = (String) request.getAttribute ("Error"); 
+        if(message == null) message = "";
+    %>
+        <div class="hidden">
+            <p id="dvMsj" ><%= message %></p>
+        </div>
         <div id="wrapper">
             <section id="studentInfo">
                 <form id="newStudent" method="POST" action="newStudent">
@@ -43,6 +51,7 @@
                                 <td class="abutton"> <input class="btn" type="button" onclick="newStudentForm();" name="btnsbm" value="OK"/> </td>
                                 <td> <input class="btn" type="reset" </td>
                             </tr>
+                        <input type="text" name="Error" value=" " class="hidden" />
                         </tbody>
                     </table>
                 </form>
