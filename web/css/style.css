@@ -13,12 +13,22 @@
     font-family: dk_cris;
     src: url(dk_cris.ttf);
 }
-#body{
-    background-image: url("../img/bg1.png");
+@font-face{
+    font-family: oxygen;
+    src: url(OxygenMono.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("../img/bg2.png");
+    background-repeat: repeat;
 }
 #wrapper{
     width: 1000px;
     margin: 0 auto;
+    background-color: white;
 }
 #formLayout img{
     border-right: 1px solid;
@@ -30,7 +40,7 @@
    font-family: Scratch;
    font-size: 17px;
    height: 17px;
-   background: url("../img/dot.png") repeat-x scroll 0 11px / 7px 10px rgba(0, 0, 0, 0);
+   background: url("../img/dot.png") repeat-x scroll 0 11px / 7px 7px rgba(0, 0, 0, 0);
    border: thin none;
    padding-left: 5px; 
 }
@@ -38,6 +48,7 @@
     font-family: manifesto;
     font-size: 22px;
     padding-left: 10px;
+    opacity: 0.75;
 }
 .abutton{
     padding-left: 10px;
@@ -45,7 +56,8 @@
 .btn{
     border:1px dashed;
     background-color: white;
-    font-family: manifesto;    
+    font-family: manifesto;
+    font-size: 16px;
 }
 .btn:hover{
     background-color: #d4d4d2; 
@@ -56,10 +68,17 @@
     border: 1px solid;
     padding: 2px;
 }
+#infoDisplay {
+    padding: 0 0 100px 0;
+}
 #displayTable{
     margin-top: 25px;
     border : 1px solid;
     border-collapse: collapse;
+    font-family: oxygen;
+    font-size: 14px;
+    margin: 10px auto 25px;
+    width: 95%;
 }
 #displayTable td {
     border : 1px dashed;
@@ -77,10 +96,15 @@
     border-collapse: collapse;
     padding: 5px 5px;
 }
+#displayTable thead tr {
+    background-color: #FFA500;
+}
 .styledSelect{
     background-color: white;
     border: 1px solid;
-    width: 67px;
+    font-family: oxygen;
+    font-size: 14px;
+    width: 90px;
 }
 .styledSelect option:nth-child(odd){
     background: #EEEEEE;
@@ -89,6 +113,8 @@
     background-color: white;
     border: 1px dashed gray;
     width: 100%;
+    font-family: oxygen;
+    font-size: 14px;
 }
 .btnupdt:hover{
     background-color: gray;
@@ -99,4 +125,15 @@
 .rdonly{
     border: none;
     background-color: transparent;
+}
+.selecCell{
+    width: 40px;
+    overflow: hidden;
+}   
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+#displayTable tbody tr:hover {
+    border: 1px solid orange !important;
 }
