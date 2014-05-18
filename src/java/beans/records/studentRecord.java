@@ -93,7 +93,7 @@ public class studentRecord implements Serializable{
     }
     private String makeSelector(int tstnum,int def,String sid){
         StringBuilder sb = new StringBuilder();
-        sb.append("<select id=").append(tstnum).append(sid).append(" value=").append(def).append(" >");
+        sb.append("<select id=").append(tstnum).append(sid).append(" value=").append(def).append(" class=styledSelect >");
         for(int i = 0; i <= 100 ; i+=5){
             if(i == def)sb.append("<option selected=selected > ").append(i).append(" </option>");
             else sb.append("<option> ").append(i).append(" </option>");
