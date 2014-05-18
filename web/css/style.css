@@ -77,8 +77,13 @@
     border-collapse: collapse;
     padding: 5px 5px;
 }
+.styledSelect {
+   background-color: #FFF;
+   border: none;
+}
 .btnupdt{
-    
+    background-color: white;
+    border: 1px solid gray;
 }
 .rdonly{
     border: none;
