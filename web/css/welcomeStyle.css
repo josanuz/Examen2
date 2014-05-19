@@ -1,0 +1,18 @@
+@font-face
+{
+    font-family: chalk;
+    src: url(Black_Crayon.ttf);
+}
+#wrapper{
+    /*width: 1000px;
+    margin: 0 auto;*/
+    overflow: hidden;
+}
+#pwel{
+    margin: 10px 0;
+    position: absolute;
+    left: -250px;
+    font-family: chalk;
+    font-size: 11em;
+    text-align: center;
+}

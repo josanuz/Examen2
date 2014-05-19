@@ -80,14 +80,14 @@ public class studentRecord implements Serializable{
         student s = record.get(id);
         String frm = "frm"+s.getId();
         String sid = s.getId();
-        sb.append("<tr>\n");
+        sb.append("<tr class=adatarow>\n");
         sb.append("<td>").append(sid).append("</td>\n");
         sb.append("<td>").append(s.getSurName()).append("</td>");
         sb.append("<td>").append(s.getName()).append("</td>");
         sb.append("<td class=selecCell>").append( makeSelector(1, (int)s.getFirstTest(), sid) ).append("</td>\n");
         sb.append("<td class=selecCell>").append( makeSelector(2, (int)s.getSecondTest(), sid) ).append("</td>\n");
         sb.append("<td class=selecCell>").append( makeSelector(3, (int)s.getThirdTest(), sid) ).append("</td>\n");
-        sb.append("<td>").append(s.getPromedio()).append("</td>\n");
+        sb.append("<td>").append(String.format("%1$,.2f",s.getPromedio()) ).append("</td>\n");
         sb.append("<td>").append(makeButton(s.getId())).append("</td>\n");
         sb.append("<td>").append(makeDelButton(s.getId())).append("</td>\n");
         sb.append("</tr>");
@@ -105,10 +105,10 @@ public class studentRecord implements Serializable{
         return sb.toString();
     }
     private String makeButton(String id){
-        return "<input class=btnupdt type=button value=Actualizar onclick=UpdateStudent("+id+"); />";  
+        return "<input class=btnupdt type=button value=Actualizar onclick=UpdateStudent(\'"+id+"\'); />";  
     }
     private String makeDelButton(String id){
-        return "<input class=btnupdt type=button value=Borrar onclick=DeleteStudent("+id+"); />";        
+        return "<input class=btnupdt type=button value=Borrar onclick=DeleteStudent(\'"+id+"\'); />";        
     }
     
     private static HashMap<String, student> record;

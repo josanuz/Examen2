@@ -8,12 +8,17 @@ and open the template in the editor.
     <head>
         <title>Welcome</title>
         <meta charset="UTF-8">
+        <script type="text/javascript" src="js/jquery_2.js"></script>
+        <script type="text/javascript" src="js/jquery_ui.js"></script>
+         <script type="text/javascript" src="js/welcome.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/welcomeStyle.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content=" 2 ; url=register.jsp">
     </head>
-    <body>
-        <div>
-            <p>WELCOME</p>
-            <a href="register.jsp">Registro</a>
+    <body onload="welcome()">
+        <div id="wrapper">
+            <p id="pwel">BIENVENIDO<br>SISTEMA<BR>NOTAS</p>
         </div>
     </body>
+
 </html>

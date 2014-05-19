@@ -32,7 +32,7 @@ function deefect(e) {
     $(e).animate({color : "#000000", opacity: 0.75}, 400, function() { });
 }
 function DeleteStudent(id) {
-    
+    if(!confirm('Realmente desea Borrar Los Datos? ')) return;
     var myForm = document.createElement("form");
     myForm.method = "post";
     myForm.action = "DeleteStudent";
@@ -81,3 +81,32 @@ function begin() {
     val = document.getElementById("dvMsj").innerHTML;
     if(!(val ==="" || val === null)) alert(val); 
 }
+
+/*
+   //Postear data sin recargar tomado de stackoverflow 18/5/14
+     http://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php
+
+    var request;
+    // bind to the submit event of our form
+    $("#foo").submit(function(event){
+    // abort any pending request
+    if (request) {
+        request.abort();
+    }
+    // setup some local variables
+    var $form = $(this);
+    // let's select and cache all the fields
+    var $inputs = $form.find("input, select, button, textarea");
+    // serialize the data in the form
+    var serializedData = $form.serialize();
+
+    // let's disable the inputs for the duration of the ajax request
+    // Note: we disable elements AFTER the form data has been serialized.
+    // Disabled form elements will not be serialized.
+    $inputs.prop("disabled", true);
+ 
+    $.post('/form.php', serializedData, function(response) {
+        // log the response to the console
+        console.log("Response: "+response);
+    });
+ */
