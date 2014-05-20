@@ -3,6 +3,9 @@
     font-family: chalk;
     src: url(Black_Crayon.ttf);
 }
+body{
+    background-image: url('../img/wbg.jpg');
+}
 #wrapper{
     /*width: 1000px;
     margin: 0 auto;*/
@@ -15,4 +18,5 @@
     font-family: chalk;
     font-size: 11em;
     text-align: center;
+    color:#FFF;
 }

@@ -33,17 +33,24 @@ public class UpdateStudent extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
      // response.setContentType("text/html;charset=UTF-8");
-      studentRecord record = new studentRecord();
-      HttpSession session = request.getSession(); 
-      String id = request.getParameter("pCarnet");
-      String pt1 = request.getParameter("pt1");
-      String pt2 = request.getParameter("pt2");
-      String pt3 = request.getParameter("pt3");
+     studentRecord record = (studentRecord) request.getSession().getAttribute("record");
+      //studentRecord record = new studentRecord();
+      HttpSession session = request.getSession();
+      String[] carnets;
+      String[] pt1;
+      String[] pt2;
+      String[] pt3;
+      carnets = request.getParameterValues("cCarnet");
+      pt1 = request.getParameterValues("pt1");
+      pt2 = request.getParameterValues("pt2");
+      pt3 = request.getParameterValues("pt3");
       int status;
-      if( (status = record.updateStudent(id, pt1, pt2, pt3)) == 1)
-          session.setAttribute("Error", "No Existe el ID");
-      else if (status == 2)
+      for(int i = 0; i < carnets.length; i++){
+        if( (status = record.updateStudent(carnets[i], pt1[i], pt2[i], pt3[i])) == 1)
+          session.setAttribute("Error", "No Existe el ID: " + carnets[i]);
+        else if (status == 2)
           session.setAttribute("Error", "No se pudieron Convertir los caracteres");
+      }
        request.getRequestDispatcher("/register.jsp"). 
        forward(request, response);
     }

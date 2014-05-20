@@ -57,7 +57,7 @@
                 </form>
             </section>
             <section id="infoDisplay">
-                <!--form id="studentsScores" -->
+                <form id="studentsScores" name="studentsScores" method="POST" action="UpdateStudent">
                     <table id="displayTable">
                         <thead>
                             <tr>
@@ -68,14 +68,16 @@
                                 <th>Examen 2</th>
                                 <th>Examen 3</th>
                                 <th>Promedio</th>
-                                <th>Actualizar</th>
                                 <th>Borrar</th>
                             </tr>
                         </thead>
                     ${record.record}
                     </table>
-                <!-- /form -->                
-            </section>     
+                    <button value="Actualizar Datos" type="submit" class="btn" id="rldBtn">Recargar Datos</button>
+                </form>
+                
+            </section>
+           
         </div>
     </body>
 </html>

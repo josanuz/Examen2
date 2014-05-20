@@ -12,8 +12,6 @@ function newStudentForm() {
     else
         document.forms["newStudent"].submit();
 }
-;
-
 function effect(ele) {
     //a = ['1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
     e = document.getElementById(ele);
@@ -77,11 +75,15 @@ function UpdateStudent(id) {
     document.body.removeChild(myForm);
 }
 function begin() {
-    //document.getElementById("wrapper").style.height = (window.innerHeight - 10) + "px";
+    rldBtn = document.getElementById('rldBtn');
+    rldBtn.disabled = true;
     val = document.getElementById("dvMsj").innerHTML;
     if(!(val ==="" || val === null)) alert(val); 
 }
-
+function enaBtn(){
+    rldBtn = document.getElementById('rldBtn');
+    rldBtn.disabled = false;
+}
 /*
    //Postear data sin recargar tomado de stackoverflow 18/5/14
      http://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php

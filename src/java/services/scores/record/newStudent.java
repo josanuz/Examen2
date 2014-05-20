@@ -34,8 +34,8 @@ public class newStudent extends HttpServlet {
        String name = request.getParameter("pName");
        String id = request.getParameter("pCarnet");
        String surname = request.getParameter("pSurName");
-       studentRecord record = new studentRecord();       
-       
+       //studentRecord record = new studentRecord();       
+       studentRecord record = (studentRecord) request.getSession().getAttribute("record");
        if(!record.addStudent(name,surname,id))
          request.setAttribute("Error", "Ya Existe el ID");
        

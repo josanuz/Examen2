@@ -32,7 +32,8 @@ public class DeleteStudent extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        studentRecord rc = new studentRecord();
+        //studentRecord rc = new studentRecord();
+        studentRecord rc = (studentRecord) request.getSession().getAttribute("record");
         String id = request.getParameter("pCarnet");
         if(!rc.deleteStudent(id)) 
             request.setAttribute("Error", "No Exist Existe el ID");
